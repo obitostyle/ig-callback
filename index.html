@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex"><title>Conectando ao Estudio</title>
+<style>body{font:16px system-ui;background:#111;color:#eee;display:grid;place-items:center;height:100vh;margin:0}div{max-width:480px;padding:24px;text-align:center}</style></head>
+<body><div><h2>Voltando ao Estudio...</h2><p id="m">Se nada acontecer em alguns segundos, o Estudio precisa estar aberto neste computador.</p></div>
+<script>
+// Pagina de repasse: nao guarda nada. So leva o codigo do Instagram de volta para o painel local (127.0.0.1).
+(function () {
+  var q = location.search || "";
+  if (!/[?&](code|error)=/.test(q)) { document.getElementById("m").textContent = "Esta pagina so funciona como retorno do login do Instagram."; return; }
+  location.replace("http://127.0.0.1:47655/oauth/instagram/callback" + q);
+})();
+</script></body></html>
